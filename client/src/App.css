@@ -1,0 +1,654 @@
+/* =========================================
+   SMART CAR RENTAL
+   Modern Colorful UI
+========================================= */
+
+:root {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  color: #172033;
+  background: #f5f7ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f5f7ff;
+  color: #172033;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 7%;
+
+  background: linear-gradient(
+    90deg,
+    #111827,
+    #312e81,
+    #2563eb
+  );
+
+  color: white;
+
+  box-shadow: 0 5px 25px rgba(37, 99, 235, 0.25);
+}
+
+nav h2 {
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav a {
+  color: #e0e7ff;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   GLOBAL BUTTON
+========================================= */
+
+button {
+  padding: 12px 22px;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+
+  color: white;
+  font-weight: 700;
+
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.25);
+
+  transition: 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 25px rgba(79, 70, 229, 0.35);
+}
+
+/* =========================================
+   HOME PAGE
+========================================= */
+
+.home {
+  width: 100%;
+}
+
+/* HERO */
+
+.hero-section {
+  min-height: 600px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 80px 6%;
+
+  text-align: center;
+
+  color: white;
+
+  background:
+    radial-gradient(
+      circle at 15% 25%,
+      rgba(236, 72, 153, 0.35),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(34, 211, 238, 0.3),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #111827 0%,
+      #312e81 45%,
+      #2563eb 100%
+    );
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.hero-content h1 {
+  margin-bottom: 24px;
+
+  font-size: clamp(42px, 7vw, 72px);
+  line-height: 1.05;
+
+  font-weight: 900;
+  letter-spacing: -2.5px;
+
+  text-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content p {
+  max-width: 680px;
+
+  margin: 0 auto 35px;
+
+  color: #dbeafe;
+
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 16px;
+}
+
+.hero-buttons button {
+  min-width: 165px;
+  padding: 15px 25px;
+
+  font-size: 15px;
+}
+
+.hero-buttons button:first-child {
+  background: linear-gradient(
+    135deg,
+    #f97316,
+    #ec4899
+  );
+}
+
+.hero-buttons button:first-child:hover {
+  background: linear-gradient(
+    135deg,
+    #ea580c,
+    #db2777
+  );
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.12);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  backdrop-filter: blur(10px);
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.features-section {
+  padding: 90px 6%;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f8faff 0%,
+      #eef2ff 100%
+    );
+}
+
+.features-section h2 {
+  margin-bottom: 50px;
+
+  font-size: 36px;
+  font-weight: 800;
+
+  color: #172033;
+}
+
+.features-container {
+  max-width: 1150px;
+
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+.feature-card {
+  position: relative;
+
+  padding: 35px 30px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  border: 1px solid #e0e7ff;
+
+  box-shadow:
+    0 10px 35px rgba(30, 41, 59, 0.08);
+
+  text-align: left;
+
+  transition: 0.3s ease;
+
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 5px;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #7c3aed,
+    #ec4899
+  );
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 45px rgba(79, 70, 229, 0.15);
+}
+
+.feature-card h3 {
+  margin-bottom: 15px;
+
+  font-size: 20px;
+  color: #1e293b;
+}
+
+.feature-card p {
+  color: #64748b;
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   CARS PAGE
+========================================= */
+
+.cars-page,
+.cars-container {
+  background: #f5f7ff;
+}
+
+.cars-container {
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 40px 30px 80px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+.car-card {
+  padding: 28px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  border: 1px solid #e0e7ff;
+
+  box-shadow:
+    0 10px 30px rgba(30, 41, 59, 0.08);
+
+  transition: 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 18px 40px rgba(37, 99, 235, 0.16);
+}
+
+.car-card h2 {
+  margin-bottom: 18px;
+
+  font-size: 23px;
+
+  color: #172033;
+}
+
+.car-card p {
+  margin: 10px 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+}
+
+.car-card p:last-of-type {
+  color: #2563eb;
+
+  font-size: 18px;
+
+  font-weight: 800;
+}
+
+.car-card button {
+  width: 100%;
+
+  margin-top: 20px;
+}
+
+/* =========================================
+   CAR FILTERS
+========================================= */
+
+.car-filters {
+  max-width: 900px;
+
+  margin: 35px auto 10px;
+
+  padding: 0 30px;
+
+  display: flex;
+
+  gap: 15px;
+}
+
+.car-filters input {
+  flex: 1;
+}
+
+.car-filters select {
+  min-width: 180px;
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+
+input,
+select {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 10px;
+
+  background: white;
+
+  color: #172033;
+
+  outline: none;
+
+  transition: 0.25s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+/* =========================================
+   LOGIN / REGISTER
+========================================= */
+
+form {
+  width: min(100% - 40px, 450px);
+
+  margin: 70px auto;
+
+  padding: 40px;
+
+  background: white;
+
+  border: 1px solid #e0e7ff;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 20px 50px rgba(30, 41, 59, 0.1);
+}
+
+form::before {
+  content: "";
+
+  display: block;
+
+  height: 5px;
+
+  margin: -40px -40px 30px;
+
+  border-radius: 20px 20px 0 0;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #7c3aed,
+    #ec4899
+  );
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #334155;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+form button {
+  width: 100%;
+
+  margin-top: 8px;
+}
+
+/* =========================================
+   BOOKINGS
+========================================= */
+
+.bookings-page {
+  max-width: 1100px;
+
+  margin: auto;
+
+  padding: 70px 30px;
+
+  min-height: 500px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+  margin-top: 70px;
+
+  padding: 35px 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #111827,
+      #312e81
+    );
+
+  color: #cbd5e1;
+
+  text-align: center;
+}
+
+footer p {
+  margin: 6px 0;
+
+  font-size: 14px;
+}
+
+footer p:first-child {
+  color: white;
+
+  font-weight: 700;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .features-container,
+  .cars-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  nav {
+    padding: 17px 4%;
+  }
+
+  nav div {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 650px) {
+  nav {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  nav div {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 13px;
+  }
+
+  .hero-section {
+    min-height: 520px;
+
+    padding: 70px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 43px;
+  }
+
+  .hero-content p {
+    font-size: 17px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons button {
+    width: 210px;
+  }
+
+  .features-container,
+  .cars-container {
+    grid-template-columns: 1fr;
+  }
+
+  .car-filters {
+    flex-direction: column;
+
+    padding: 0 20px;
+  }
+
+  .car-filters select {
+    width: 100%;
+  }
+
+  form {
+    padding: 30px;
+  }
+
+  form::before {
+    margin: -30px -30px 25px;
+  }
+}
