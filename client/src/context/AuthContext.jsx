@@ -8,6 +8,7 @@ export function AuthProvider({ children }) {
   const login = (userData, token) => {
     localStorage.setItem("token", token);
     setUser(userData);
+    console.log(localStorage.getItem("token"));
   };
 
   const logout = () => {
