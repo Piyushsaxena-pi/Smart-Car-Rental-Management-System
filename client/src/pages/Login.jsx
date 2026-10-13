@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { getRoleFromEmail } from "../utils/roles";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -12,16 +13,16 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const role = getRoleFromEmail(email);
+
     const userData = {
       email,
       name: "Demo User",
-      role: "customer",
+      role,
     };
 
-    const demoToken = "demo-token";
-
-    login(userData, demoToken);
-    navigate("/");
+    login(userData, "demo-token");
+    navigate(role === "author" ? "/author/dashboard" : "/");
   };
 
   return (
